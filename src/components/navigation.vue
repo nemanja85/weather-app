@@ -1,5 +1,12 @@
 <script setup>
+import { ref } from 'vue';
 import { RouterLink } from 'vue-router';
+import BaseModal from './baseModal.vue';
+
+const modalActive = ref(null);
+const toogleModal = () => {
+  modalActive.value = !modalActive.value;
+};
 </script>
 <template>
   <header class="sticky top-0 bg-blue-800 shadow-lg">
@@ -11,9 +18,15 @@ import { RouterLink } from 'vue-router';
         </div>
       </RouterLink>
       <div class="flex justify-end flex-1 gap-3">
-        <i class="text-xl duration-150 cursor-pointer fa-solid fa-circle-info hover:text-blue-500"></i>
+        <i
+          class="text-xl duration-150 cursor-pointer fa-solid fa-circle-info hover:text-blue-500"
+          @click="toogleModal"
+        ></i>
         <i class="text-xl duration-150 cursor-pointer fa-solid fa-plus hover:text-blue-500"></i>
       </div>
+      <BaseModal :modalActive="modalActive" @close-modal="toogleModal">
+        <h1 class="text-black">Hello from Modal</h1>
+      </BaseModal>
     </nav>
   </header>
 </template>
