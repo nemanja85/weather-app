@@ -1,5 +1,9 @@
-<script setup></script>
+<script setup>
+import AsyncCityView from '@/components/AsyncCityView.vue';
+</script>
 
 <template>
-  <div></div>
+  <div>
+    <AsyncCityView />
+  </div>
 </template>
