@@ -4,6 +4,11 @@ import AsyncCityView from '@/components/AsyncCityView.vue';
 
 <template>
   <div>
-    <AsyncCityView />
+    <Suspense>
+      <AsyncCityView />
+      <template #fallback>
+        <p>Loading data ....</p>
+      </template>
+    </Suspense>
   </div>
 </template>
