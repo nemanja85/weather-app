@@ -6,10 +6,11 @@ const route = useRoute();
 const getWeatherData = async () => {
   try {
     const weatherData = await axios.get(
-      `https://api.openweathermap.org/data/3.0/onecall?lat=${route.query.lat}&lon=${route.query.lng}&exclude={part}&appid=c162fe4f8aa2e1f78b033f17143a3c4a&units=imperial`
+      `https://api.openweathermap.org/data/2.5/weather?lat=${route.query.lat}&lon=${route.query.lng}&exclude={part}&appid=4dbbb5fbef639a52415edc87fa9ef5a7&units=imperial`
     );
-
+    console.log(weatherData);
     const localOffset = new Date().getTimezoneOffset() * 60000;
+    console.log(localOffset.data.current);
     const utc = weatherData.data.current.dt * 1000 + localOffset;
     weatherData.data.currentTime = utc + 1000 * weatherData.data.timezone_offset;
 
@@ -18,7 +19,7 @@ const getWeatherData = async () => {
       hour.currentTime = utc + 1000 * weatherData.data.timezone_offset;
     });
 
-    return weatherData;
+    return weatherData.data;
   } catch (err) {
     console.error(err);
   }
