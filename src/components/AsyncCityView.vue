@@ -8,20 +8,15 @@ const getWeatherData = async () => {
     const weatherData = await axios.get(
       `https://api.openweathermap.org/data/2.5/weather?lat=${route.query.lat}&lon=${route.query.lng}&exclude={part}&appid=4dbbb5fbef639a52415edc87fa9ef5a7&units=imperial`
     );
-    console.log(weatherData);
-    const localOffset = new Date().getTimezoneOffset() * 60000;
-    console.log(localOffset.data.current);
-    const utc = weatherData.data.current.dt * 1000 + localOffset;
-    weatherData.data.currentTime = utc + 1000 * weatherData.data.timezone_offset;
 
-    weatherData.data.hourly.forEach((hour) => {
-      const utc = hour.dt * 1000 + localOffset;
-      hour.currentTime = utc + 1000 * weatherData.data.timezone_offset;
-    });
+    // cal current date & time
+    const localOffset = new Date().getTimezoneOffset() * 60000;
+    console.log('weather data', weatherData);
+    const utc = weatherData.data.dt * 1000 + localOffset;
 
     return weatherData.data;
   } catch (err) {
-    console.error(err);
+    console.log(err);
   }
 };
 
@@ -38,20 +33,6 @@ console.log(weatherData);
       <h1 class="mb-2 text-4xl">
         {{ route.params.city }}
       </h1>
-      <p class="mb-10 text-sm">
-        {{
-          newDate(weatherData.currentTime).toLocaleDataString('en-us', {
-            weekday: 'short',
-            day: '2-digit',
-            month: 'long',
-          })
-        }}
-        {{
-          newDate(weatherData.currentTime).toLocaleDataString('en-us', {
-            timeStyle: 'short',
-          })
-        }}
-      </p>
     </div>
   </div>
 </template>
