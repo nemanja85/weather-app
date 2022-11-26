@@ -18,6 +18,7 @@ const addCity = () => {
   }
 
   const location = {
+    id: route.params.id,
     city: route.params.name,
     cords: {
       lat: route.query.lat,
@@ -46,7 +47,11 @@ const addCity = () => {
           class="text-xl duration-150 cursor-pointer fa-solid fa-circle-info hover:text-blue-500"
           @click="toogleModal"
         ></i>
-        <i class="text-xl duration-150 cursor-pointer fa-solid fa-plus hover:text-blue-500" @click="addCity"></i>
+        <i
+          class="text-xl duration-150 cursor-pointer fa-solid fa-plus hover:text-blue-500"
+          @click="addCity"
+          v-if="route.query.preview"
+        ></i>
       </div>
       <BaseModal :modalActive="modalActive" @close-modal="toogleModal">
         <h1 class="text-black">Hello from Modal</h1>
