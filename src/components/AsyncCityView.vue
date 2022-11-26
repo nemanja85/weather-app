@@ -35,13 +35,17 @@ console.log(weatherData);
       </h1>
       <p class="mt-8 text-5xl">{{ Math.round(weatherData.main.temp) }}&deg</p>
       <p class="mt-4 text-xl capitalize">{{ weatherData.weather[0].description }}</p>
-      <p class="mt-2 text-xl">Humidity: {{ weatherData.main.humidity }}%</p>
-      <p class="mt-2 text-xl">Speed of wind: {{ Math.round(weatherData.wind.speed) }} m/s</p>
       <img
         :src="`http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`"
-        class="w-40 h-auto mt-8"
+        class="w-20 h-auto"
         :alt="`${weatherData.weather[0].description}`"
       />
+      <div class="flex w-20 justify-evenly">
+        <p class="text-md">{{ Math.round(weatherData.main.temp_max) }}&deg</p>
+        <p class="text-md">{{ Math.round(weatherData.main.temp_min) }}&deg</p>
+      </div>
+      <p class="mt-2 text-xl">Humidity: {{ weatherData.main.humidity }}%</p>
+      <p class="mt-2 text-xl">Speed of wind: {{ Math.round(weatherData.wind.speed) }} m/s</p>
     </div>
   </div>
   <hr class="w-full border border-white border-opacity-50" />
