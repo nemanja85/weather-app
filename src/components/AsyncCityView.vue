@@ -21,7 +21,6 @@ const getWeatherData = async () => {
 };
 
 const weatherData = await getWeatherData();
-console.log(weatherData);
 </script>
 
 <template>
@@ -33,7 +32,7 @@ console.log(weatherData);
       <h1 class="mb-2 text-4xl">
         {{ route.params.city }}
       </h1>
-      <p class="mt-8 text-5xl">{{ Math.round(weatherData.main.temp) }}&deg</p>
+      <p class="mt-8 text-5xl">{{ Math.round((weatherData.main.temp - 32) * (5 / 9)) }}&degC</p>
       <p class="mt-4 text-xl capitalize">{{ weatherData.weather[0].main }}, {{ weatherData.weather[0].description }}</p>
       <img
         :src="`http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`"
@@ -41,8 +40,8 @@ console.log(weatherData);
         :alt="`${weatherData.weather[0].description}`"
       />
       <div class="flex w-20 justify-evenly">
-        <p class="text-md">{{ Math.round(weatherData.main.temp_max) }}&deg</p>
-        <p class="text-md">{{ Math.round(weatherData.main.temp_min) }}&deg</p>
+        <p class="text-md">{{ Math.round((weatherData.main.temp_max - 32) * (5 / 9)) }}&degC</p>
+        <p class="text-md">{{ Math.round((weatherData.main.temp_min - 32) * (5 / 9)) }}&degC</p>
       </div>
       <p class="mt-2 text-lg">Humidity: {{ weatherData.main.humidity }}%</p>
       <p class="mt-2 text-lg">Pressure: {{ weatherData.main.pressure }} millibars</p>
