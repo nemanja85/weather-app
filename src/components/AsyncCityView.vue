@@ -33,6 +33,7 @@ const weatherData = await getWeatherData();
         {{ route.params.city }}
       </h1>
       <p class="mt-8 text-5xl">{{ Math.round((weatherData.main.temp - 32) * (5 / 9)) }}&degC</p>
+      <p class="mt-4 capitalize text-md">Feels like: {{ Math.round((weatherData.main.temp - 32) * (5 / 9)) }}&degC</p>
       <p class="mt-4 text-xl capitalize">{{ weatherData.weather[0].main }}, {{ weatherData.weather[0].description }}</p>
       <img
         :src="`http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`"
@@ -40,13 +41,14 @@ const weatherData = await getWeatherData();
         :alt="`${weatherData.weather[0].description}`"
       />
       <div class="flex w-20 justify-evenly">
-        <p class="text-md">{{ Math.round((weatherData.main.temp_max - 32) * (5 / 9)) }}&degC</p>
+        <p class="text-md">{{ Math.round((weatherData.main.temp_max - 32) * (5 / 9)) }}</p>
+        /
         <p class="text-md">{{ Math.round((weatherData.main.temp_min - 32) * (5 / 9)) }}&degC</p>
       </div>
       <p class="mt-2 text-lg">Humidity: {{ weatherData.main.humidity }}%</p>
       <p class="mt-2 text-lg">Pressure: {{ weatherData.main.pressure }} millibars</p>
       <p class="mt-2 text-lg">Visibility: {{ weatherData.visibility / 1000 }} km</p>
-      <p class="mt-2 text-lg">Speed of wind: {{ Math.round(weatherData.wind.speed) }} m/s</p>
+      <p class="mt-2 text-lg">Wind speed: {{ Math.round(weatherData.wind.speed) }} m/s</p>
     </div>
   </div>
   <hr class="w-full border border-white border-opacity-50" />
