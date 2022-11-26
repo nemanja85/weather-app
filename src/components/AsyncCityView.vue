@@ -46,6 +46,7 @@ console.log(weatherData);
       </div>
       <p class="mt-2 text-lg">Humidity: {{ weatherData.main.humidity }}%</p>
       <p class="mt-2 text-lg">Pressure: {{ weatherData.main.pressure }} millibars</p>
+      <p class="mt-2 text-lg">Visibility: {{ weatherData.visibility / 1000 }} km</p>
       <p class="mt-2 text-lg">Speed of wind: {{ Math.round(weatherData.wind.speed) }} m/s</p>
     </div>
   </div>
