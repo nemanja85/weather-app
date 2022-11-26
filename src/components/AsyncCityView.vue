@@ -34,7 +34,7 @@ console.log(weatherData);
         {{ route.params.city }}
       </h1>
       <p class="mt-8 text-5xl">{{ Math.round(weatherData.main.temp) }}&deg</p>
-      <p class="mt-4 text-xl capitalize">{{ weatherData.weather[0].description }}</p>
+      <p class="mt-4 text-xl capitalize">{{ weatherData.weather[0].main }}, {{ weatherData.weather[0].description }}</p>
       <img
         :src="`http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`"
         class="w-20 h-auto"
@@ -44,8 +44,9 @@ console.log(weatherData);
         <p class="text-md">{{ Math.round(weatherData.main.temp_max) }}&deg</p>
         <p class="text-md">{{ Math.round(weatherData.main.temp_min) }}&deg</p>
       </div>
-      <p class="mt-2 text-xl">Humidity: {{ weatherData.main.humidity }}%</p>
-      <p class="mt-2 text-xl">Speed of wind: {{ Math.round(weatherData.wind.speed) }} m/s</p>
+      <p class="mt-2 text-lg">Humidity: {{ weatherData.main.humidity }}%</p>
+      <p class="mt-2 text-lg">Pressure: {{ weatherData.main.pressure }} millibars</p>
+      <p class="mt-2 text-lg">Speed of wind: {{ Math.round(weatherData.wind.speed) }} m/s</p>
     </div>
   </div>
   <hr class="w-full border border-white border-opacity-50" />
