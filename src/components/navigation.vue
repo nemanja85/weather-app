@@ -19,7 +19,7 @@ const addCity = () => {
 
   const location = {
     id: route.params.id,
-    city: route.params.name,
+    city: route.query.name,
     cords: {
       lat: route.query.lat,
       lng: route.query.lng,
