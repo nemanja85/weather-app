@@ -25,7 +25,7 @@ const weatherData = await getWeatherData();
 
 <template>
   <div class="flex flex-col items-center flex-1">
-    <div v-if="route.query.preview" class="w-full p-4 text-center text-gray-100 bg-blue-600">
+    <div v-if="route.query.preview" class="w-full p-4 text-center text-gray-100 bg-gray-800">
       <p>You are currently previewing this city , click the "+" icon to start tracking this city</p>
     </div>
     <div class="flex flex-col items-center p-10 text-gray-100">

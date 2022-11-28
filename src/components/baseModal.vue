@@ -13,12 +13,12 @@ defineProps({
     <Transition name="modal-outer">
       <div
         v-show="modalActive"
-        class="absolute top-0 left-0 flex justify-center w-full h-screen px-8 bg-slate-800 bg-opacity-30"
+        class="absolute top-0 left-0 flex justify-center w-full h-screen px-8 bg-gray-800 bg-opacity-30"
       >
         <Transition name="modal-inner">
           <div v-if="modalActive" class="self-start max-w-screen-md p-4 mt-32 bg-gray-100">
             <slot />
-            <button @click="$emit('close-modal')" class="px-6 py-2 mt-8 text-gray-100 bg-blue-800">Close</button>
+            <button @click="$emit('close-modal')" class="px-6 py-2 mt-8 text-gray-100 bg-gray-800">Close</button>
           </div>
         </Transition>
       </div>

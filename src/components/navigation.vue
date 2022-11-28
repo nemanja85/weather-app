@@ -34,7 +34,7 @@ const addCity = () => {
 };
 </script>
 <template>
-  <header class="sticky top-0 bg-blue-800 shadow-lg">
+  <header class="sticky top-0 bg-gray-800 shadow-lg">
     <nav class="container flex flex-col items-center gap-4 py-6 mx-auto text-white sm:flex-row">
       <RouterLink :to="{ name: 'home' }">
         <div class="flex items-center flex-1 gap-3">
@@ -44,11 +44,11 @@ const addCity = () => {
       </RouterLink>
       <div class="flex justify-end flex-1 gap-3">
         <i
-          class="text-xl duration-150 cursor-pointer fa-solid fa-circle-info hover:text-blue-500"
+          class="text-xl duration-150 cursor-pointer fa-solid fa-circle-info hover:text-gray-700"
           @click="toogleModal"
         ></i>
         <i
-          class="text-xl duration-150 cursor-pointer fa-solid fa-plus hover:text-blue-500"
+          class="text-xl duration-150 cursor-pointer fa-solid fa-plus hover:text-gray-700"
           @click="addCity"
           v-if="route.query.preview"
         ></i>
