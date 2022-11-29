@@ -48,7 +48,7 @@ const weatherData = await getWeatherData();
       <p class="mt-2 text-lg">Humidity: {{ weatherData.main.humidity }}%</p>
       <p class="mt-2 text-lg">Pressure: {{ weatherData.main.pressure }} millibars</p>
       <p class="mt-2 text-lg">Visibility: {{ weatherData.visibility / 1000 }} km</p>
-      <p class="mt-2 text-lg">Wind speed: {{ Math.round(weatherData.wind.speed) }} m/s</p>
+      <p class="mt-2 text-lg">Wind speed: {{ Math.round(weatherData.wind.speed) }} km/h</p>
     </div>
   </div>
   <hr class="w-full border border-white border-opacity-50" />

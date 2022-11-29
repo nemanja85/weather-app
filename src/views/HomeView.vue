@@ -53,7 +53,7 @@ const getSearchResults = () => {
         placeholder="Search for a city or state"
         class="w-full p-2 bg-transparent border-b focus:outline-none focus:shadow-md"
       />
-      <ul class="absolute w-full p-4 mt-3 bg-blue-700 shadow-md text-gray-light" v-if="mapboxSearchResults">
+      <ul class="absolute w-full p-4 mt-3 bg-gray-800 shadow-md text-gray-light" v-if="mapboxSearchResults">
         <p v-if="searchError" class="text-base font-medium text-red-800">
           Sorry, something went wrong, please try again!
         </p>
