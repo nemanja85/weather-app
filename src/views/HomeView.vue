@@ -54,10 +54,10 @@ const getSearchResults = () => {
         class="w-full p-2 bg-transparent border-b focus:outline-none focus:shadow-md"
       />
       <ul class="absolute w-full p-4 mt-3 bg-gray-800 shadow-md text-gray-light" v-if="mapboxSearchResults">
-        <p v-if="searchError" class="text-base font-medium text-red-800">
+        <p v-if="searchError" class="text-xl font-medium text-red-800">
           Sorry, something went wrong, please try again!
         </p>
-        <p v-if="!serverError && mapboxSearchResults.value === 0" class="text-base font-medium text-red-800">
+        <p v-if="!serverError && mapboxSearchResults.length === 0" class="text-base font-medium text-red-800">
           No results match your query, please try a different term!
         </p>
         <template v-else>
