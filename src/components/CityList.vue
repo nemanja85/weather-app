@@ -2,8 +2,10 @@
 import CityCard from '@/components/CityCard.vue';
 import axios from 'axios';
 import { ref } from 'vue';
+import { useRouter } from 'vue-router';
 
 const savedCities = ref([]);
+
 const getCities = async () => {
   if (localStorage.getItem('savedCities')) {
     savedCities.value = JSON.parse(localStorage.getItem('savedCities'));
@@ -26,9 +28,18 @@ const getCities = async () => {
 };
 
 await getCities();
+
+const router = useRouter();
+const toCityView = (city) => {
+  router.push({
+    name: 'cityView',
+    params: { state: city.city, city: city.city },
+    query: { lat: city.cords.lat, lng: city.cords.lng },
+  });
+};
 </script>
 <template>
   <div v-for="city in savedCities" :key="city.id">
-    <CityCard :city="city" />
+    <CityCard :city="city" @click="toCityView(city)" />
   </div>
 </template>
