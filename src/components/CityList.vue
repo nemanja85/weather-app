@@ -42,4 +42,7 @@ const toCityView = (city) => {
   <div v-for="city in savedCities" :key="city.id">
     <CityCard :city="city" @click="toCityView(city)" />
   </div>
+  <p v-if="savedCities.length == 0" class="text-lg text-gray-100">
+    No locations added. To start tracking a location search in the field above.
+  </p>
 </template>
