@@ -33,7 +33,9 @@ const weatherData = await getWeatherData();
         {{ route.params.city }}
       </h1>
       <p class="mt-8 text-5xl">{{ Math.round((weatherData.main.temp - 32) * (5 / 9)) }}&degC</p>
-      <p class="mt-4 capitalize text-md">Feels like: {{ Math.round((weatherData.main.temp - 32) * (5 / 9)) }}&degC</p>
+      <p class="mt-4 capitalize text-md">
+        Feels like: {{ Math.round((weatherData.main.feels_like - 32) * (5 / 9)) }}&degC
+      </p>
       <p class="mt-4 text-xl capitalize">{{ weatherData.weather[0].main }}, {{ weatherData.weather[0].description }}</p>
       <img
         :src="`http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`"
