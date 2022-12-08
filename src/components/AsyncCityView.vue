@@ -1,6 +1,6 @@
 <script setup>
 import axios from 'axios';
-import { useRoute } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 
 const route = useRoute();
 const getWeatherData = async () => {
@@ -21,6 +21,11 @@ const getWeatherData = async () => {
 };
 
 const weatherData = await getWeatherData();
+
+const router = useRouter();
+const removeCity = () => {
+  const cities = JSON.parse(localStorage.getItem('savedCities'));
+};
 </script>
 
 <template>
@@ -51,6 +56,13 @@ const weatherData = await getWeatherData();
       <p class="mt-2 text-lg">Pressure: {{ weatherData.main.pressure }} millibars</p>
       <p class="mt-2 text-lg">Visibility: {{ weatherData.visibility / 1000 }} km</p>
       <p class="mt-2 text-lg">Wind speed: {{ Math.round(weatherData.wind.speed) }} km/h</p>
+    </div>
+    <div
+      class="flex items-center gap-2 py-10 text-gray-100 duration-150 cursor-pointer hover:text-red-500"
+      @click="removeCity"
+    >
+      <i class="fa-solid fa-trash"></i>
+      <p>Remove City</p>
     </div>
   </div>
   <hr class="w-full border border-white border-opacity-50" />
