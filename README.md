@@ -7,4 +7,4 @@
   </a>
 </p>
 
-This app provides current temperature in Celsius, wind speed, humidity and location coordinates. 
+This APP provides current temperature in Celsius, wind speed, humidity and location coordinates. 
