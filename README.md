@@ -8,3 +8,20 @@
 </p>
 
 This APP provides current temperature in Celsius, wind speed, humidity and location coordinates. 
+
+## Install
+
+```sh
+npm init @vitejs/app
+```
+
+## Getting Started
+
+```sh
+npm run dev
+```
+
+
+The page will reload if you make edits.
+
+You will also see any lint errors in the console.
