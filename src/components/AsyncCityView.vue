@@ -5,8 +5,9 @@ import { useRoute, useRouter } from 'vue-router';
 const route = useRoute();
 const getWeatherData = async () => {
   try {
+    const appID = import.meta.env.VITE_APP_ID;
     const weatherData = await axios.get(
-      `https://api.openweathermap.org/data/2.5/weather?lat=${route.query.lat}&lon=${route.query.lng}&exclude={part}&appid=4dbbb5fbef639a52415edc87fa9ef5a7&units=imperial`
+      `https://api.openweathermap.org/data/2.5/weather?lat=${route.query.lat}&lon=${route.query.lng}&exclude={part}&appid=${appID}&units=imperial`
     );
 
     // cal current date & time

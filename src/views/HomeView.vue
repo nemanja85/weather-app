@@ -17,7 +17,7 @@ const previewCity = (searchResult) => {
     },
   });
 };
-const mapboxAPIKey = 'pk.eyJ1IjoibmVtYW5qYTg1IiwiYSI6ImNsOXgzdjhubjA2am0zd3VyZ2NtdmJkcDIifQ.dzJeT_IoCyxP4OXbeK5FAA';
+const mapboxAPIKey = import.meta.env.VITE_MAPBOX_API_KEY;
 const searchQuery = ref('');
 const queryTimeout = ref(null);
 const mapboxSearchResults = ref(null);
