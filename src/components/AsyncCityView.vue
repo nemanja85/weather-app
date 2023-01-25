@@ -11,7 +11,6 @@ const getWeatherData = async () => {
 
     // cal current date & time
     const localOffset = new Date().getTimezoneOffset() * 60000;
-    console.log('weather data', weatherData);
     const utc = weatherData.data.dt * 1000 + localOffset;
 
     return weatherData.data;

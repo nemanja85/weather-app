@@ -10,7 +10,6 @@ const getCities = async () => {
   if (localStorage.getItem('savedCities')) {
     savedCities.value = JSON.parse(localStorage.getItem('savedCities'));
     const request = [];
-    console.log('saved cities', savedCities.value);
     savedCities.value.forEach((city) => {
       request.push(
         axios.get(
