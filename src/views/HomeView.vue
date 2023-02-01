@@ -77,7 +77,7 @@ const getSearchResults = () => {
       <Suspense>
         <CityList />
         <template #fallback>
-          <div class="flex items-center justify-center w-full h-screen">
+          <div class="flex justify-center w-full h-screen">
             <div role="status">
               <CityCardSkeleton />
             </div>

@@ -2,7 +2,7 @@
 import AnimatedPlaceholder from './AnimatedPlaceholder.vue';
 </script>
 <template>
-  <div class="flex px-3 py-6 bg-gray-800 rounded-sm shadow-md">
+  <div class="flex w-full px-3 py-6 bg-gray-800 rounded-sm shadow-md">
     <div class="flex flex-col flex-1 gap-2">
       <AnimatedPlaceholder class="max-w-[50%]" />
       <AnimatedPlaceholder class="max-w-[40%]" />
