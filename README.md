@@ -12,7 +12,7 @@ This APP provides current temperature in Celsius, wind speed, humidity and locat
 ## Install
 
 ```sh
-npm init @vitejs/app
+npm install
 ```
 
 ## Getting Started
