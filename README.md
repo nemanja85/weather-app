@@ -9,6 +9,16 @@
 
 This APP provides current temperature in Celsius, wind speed, humidity and location coordinates. 
 
+## Clone the project
+
+```sh
+git clone git@github.com:nemanja85/weather-app.git
+```
+
+```sh
+cd weather-app
+```
+
 ## Install
 
 ```sh
@@ -21,7 +31,3 @@ npm install
 npm run dev
 ```
 
-
-The page will reload if you make edits.
-
-You will also see any lint errors in the console.
