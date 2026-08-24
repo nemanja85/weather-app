@@ -22,9 +22,9 @@
     "postcss": "^8.5.26",
     "start-server-and-test": "^3.0.12",
     "tailwindcss": "^4.3.3",
-    "vite": "^8.2.1"
+    "vite": "^8.2.2"
   },
   "allowScripts": {
-    "cypress@15.20.0": true
+    "cypress@15.21.0": true
   }
 }
